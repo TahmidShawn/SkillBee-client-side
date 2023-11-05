@@ -13,8 +13,8 @@ const Job = ({ job }) => {
                     <p>Deadline : {deadline}</p>
                 </div>
                 <div className="card-actions mt-5">
-                    <Link to={`category/${_id}`} className=" w-full btn btn-outline">
-                        <button>Buy Now</button>
+                    <Link to={`jobs/${_id}`} className=" w-full btn btn-outline">
+                        <button>Bid Now</button>
                     </Link>
                 </div>
             </div>
