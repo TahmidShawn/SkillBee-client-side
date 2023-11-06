@@ -44,7 +44,7 @@ const Routes = createBrowserRouter([
             },
             {
                 path: '/myBids',
-                element: <MyBids></MyBids>
+                element: <MyBids></MyBids>,
             }
         ]
     }
