@@ -2,12 +2,12 @@ import { Link } from "react-router-dom";
 import PropTypes from 'prop-types';
 
 const Job = ({ job }) => {
-    const { _id, deadline, title, shortDescription, minPrice, maxPrice } = job
+    const { _id, deadline, title, description, minPrice, maxPrice } = job
     return (
         <div className="card bg-[#F8F9FB] shadow-xl mt-10 border-2">
             <div className="card-body">
                 <h2 className="card-title text-4xl font-bold mb-5">{title}</h2>
-                <p>{shortDescription}</p>
+                <p>{description}</p>
                 <div className="font-bold my-3">
                     <p>Price : {minPrice}-{maxPrice} $</p>
                     <p>Deadline : {deadline}</p>
@@ -30,7 +30,7 @@ Job.propTypes = {
         minPrice: PropTypes.string.isRequired,
         maxPrice: PropTypes.string.isRequired,
         title: PropTypes.string.isRequired,
-        shortDescription: PropTypes.string.isRequired,
+        description: PropTypes.string.isRequired,
     }).isRequired,
 };
 

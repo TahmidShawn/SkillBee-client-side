@@ -27,7 +27,7 @@ const Category = () => {
                 <TabPanel>
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-5 md:gap-20">
                         {
-                            webDesignerJobs.map(job => <Job key={job.id} job={job}></Job>)
+                            webDesignerJobs.map(job => <Job key={job._id} job={job}></Job>)
                         }
                     </div>
                 </TabPanel>
@@ -36,7 +36,7 @@ const Category = () => {
                 <TabPanel>
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-5 md:gap-20">
                         {
-                            graphicsDesignJobs.map(job => <Job key={job.id} job={job}></Job>)
+                            graphicsDesignJobs.map(job => <Job key={job._id} job={job}></Job>)
                         }
                     </div>
                 </TabPanel>
@@ -44,7 +44,7 @@ const Category = () => {
                 <TabPanel>
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-5 md:gap-20">
                         {
-                            digitalMarketingJobs.map(job => <Job key={job.id} job={job}></Job>)
+                            digitalMarketingJobs.map(job => <Job key={job._id} job={job}></Job>)
                         }
                     </div>
                 </TabPanel>

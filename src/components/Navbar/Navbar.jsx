@@ -1,8 +1,25 @@
 import logo from './../../assets/logo.png'
 import { FaUser } from 'react-icons/fa';
 import NavLinks from "./NavLinks";
+import { useContext } from 'react';
+import { AuthContext } from '../../provider/AuthProvider';
+import { Link } from 'react-router-dom';
+import toast from 'react-hot-toast';
 
 const Navbar = () => {
+
+    const { user, logOut } = useContext(AuthContext)
+    // console.log(user);
+    const handleLogOut = () => {
+        logOut()
+            .then(result => {
+                console.log(result);
+                toast.success('LogOut Successfully Done!');
+            })
+            .catch(error => {
+                console.log(error);
+            })
+    }
 
     const links = <>
         <NavLinks></NavLinks>
@@ -48,7 +65,14 @@ const Navbar = () => {
                             </a>
                         </li>
                         <li><a>Settings</a></li>
-                        <li><a>Logout</a></li>
+                        <li>
+                            {
+                                user ?
+                                    <button onClick={handleLogOut}>LogOut</button>
+                                    :
+                                    <Link to='/login'> <button>LogIn</button></Link>
+                            }
+                        </li>
                     </ul>
                 </div>
             </div>

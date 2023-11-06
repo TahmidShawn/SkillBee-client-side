@@ -1,13 +1,56 @@
-import { Link } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import { FcGoogle } from 'react-icons/fc';
+import { useContext } from "react";
+import { AuthContext } from "../../provider/AuthProvider";
+import toast from "react-hot-toast";
 
 
 const Login = () => {
+
+    const { googleLogin, logInUser } = useContext(AuthContext)
+    const location = useLocation()
+    const navigate = useNavigate()
+
+    // login via email password 
+    const handleLogIn = event => {
+        event.preventDefault()
+        const form = event.target
+        // get register info 
+        const email = form.email.value
+        const password = form.password.value
+
+        const newUser = { email, password }
+        console.log(newUser);
+        // logIn user 
+        console.log(newUser);
+        // create user 
+        logInUser(email, password)
+            .then(result => {
+                console.log(result.user);
+                toast.success('Successfully Logged In!');
+                navigate(location?.state ? location.state : '/')
+            })
+            .catch(error => {
+                console.log(error);
+            })
+
+    }
+
+    // login via google 
+    const handleGoogleLogin = () => {
+
+        googleLogin()
+            .then(() => {
+                toast.success('Google login successfully done')
+                navigate(location?.state ? location.state : '/')
+            })
+    }
+
     return (
         <div className="bg-[#F5F7FA] py-8">
             <h2 className='text-4xl font-bold text-center'>Login</h2>
             <div className="card flex-shrink-0 w-full mx-auto max-w-2xl shadow-2xl bg-base-100 mt-10">
-                <form className="card-body">
+                <form onSubmit={handleLogIn} className="card-body">
                     <div className="form-control">
                         <label className="label">
                             <span className="label-text">Email</span>
@@ -28,9 +71,9 @@ const Login = () => {
                     </div>
                     <h2 className="my-3 text-center">Do not have an account?  <span><Link className="text-blue-800 font-bold ml-1" to='/register'>Register</Link></span> </h2>
 
-                    <div className="flex items-center">
-                        <Link className="w-full btn btn-outline btn-primary">
-                            <button className="flex justify-center items-center gap-2 font-bold text-md"> <FcGoogle className="text-2xl"/>Continue with Google </button>
+                    <div className="flex items-center justify-center">
+                        <Link className="">
+                            <button onClick={handleGoogleLogin} className="flex btn btn-outline btn-primary justify-center items-center gap-2 font-bold text-md"> <FcGoogle className="text-2xl" />Continue with Google </button>
                         </Link>
                     </div>
 
