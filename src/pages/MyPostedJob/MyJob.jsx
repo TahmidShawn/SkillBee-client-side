@@ -1,11 +1,18 @@
+/* eslint-disable react/prop-types */
 import { useContext } from "react";
 import { AuthContext } from "../../provider/AuthProvider";
+import { Link } from "react-router-dom";
 
-const MyJob = ({ myJob }) => {
+
+const MyJob = ({ myJob, handleDelete }) => {
     console.log(myJob);
-    const { description, deadline, category, minPrice, maxPrice, buyerEmail, title } = myJob
+
+    const { _id, description, deadline, category, minPrice, maxPrice, buyerEmail, title } = myJob
     console.log(buyerEmail);
     const { user } = useContext(AuthContext)
+
+
+
 
     if (buyerEmail === user?.email) {
         return (
@@ -20,7 +27,10 @@ const MyJob = ({ myJob }) => {
                         <p>Maximum Price : {maxPrice}</p>
                         <p>Deadline : {deadline}</p>
                     </div>
-                    <button className="btn text-center btn-success">Update</button>
+                    <div className="flex justify-center gap-4">
+                        <Link to={`/updateJobs/${_id}`}><button className="btn btn-success">Update</button></Link>
+                        <button onClick={() => handleDelete(_id)} className="btn btn-warning">Delete</button>
+                    </div>
                 </div>
             </div>
         );
