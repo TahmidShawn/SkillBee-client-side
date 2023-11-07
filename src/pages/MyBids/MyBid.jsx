@@ -16,10 +16,10 @@ const MyBid = ({ myBid }) => {
             <td>{email}</td>
             <td>{user_deadLine}</td>
             <th>
-                <button className="btn btn-ghost btn-xs">details</button>
+                <button className="btn btn-ghost btn-xs">Pending</button>
             </th>
             <th>
-                <button className="btn btn-ghost btn-xs">details</button>
+                <button className="btn btn-ghost btn-xs">Complete</button>
             </th>
         </tr>
 

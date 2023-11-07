@@ -4,14 +4,14 @@ import { useContext, useEffect, useState } from "react";
 import { AuthContext } from "../../provider/AuthProvider";
 
 const MyBids = () => {
-    const [myBids, setBookings] = useState([])
+    const [myBids, setMyBids] = useState([])
     const { user } = useContext(AuthContext)
 
     const url = `http://localhost:5000/myBids?email=${user?.email}`
     useEffect(() => {
         fetch(url)
             .then(res => res.json())
-            .then(data => setBookings(data))
+            .then(data => setMyBids(data))
 
 
 
