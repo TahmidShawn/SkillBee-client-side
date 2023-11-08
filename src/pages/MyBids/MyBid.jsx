@@ -13,7 +13,7 @@ const MyBid = ({ myBid, handleComplete }) => {
                     </div>
                 </div>
             </td>
-            <td>{email}</td>
+            <td>{buyer_email}</td>
             <td>{user_deadLine}</td>
             <th>
                 {

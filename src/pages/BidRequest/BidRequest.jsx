@@ -6,7 +6,7 @@ const BidRequest = () => {
     const [bidRequest, setBidRequest] = useState([])
     const { user } = useContext(AuthContext)
 
-    const url = `http://localhost:5000/myBids?email=${user?.email}`
+    const url = 'http://localhost:5000/myBids'
     useEffect(() => {
         fetch(url)
             .then(res => res.json())
