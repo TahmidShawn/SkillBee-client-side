@@ -1,10 +1,11 @@
 import { useContext } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../provider/AuthProvider";
 import { Helmet } from "react-helmet";
+import toast from "react-hot-toast";
 
 const Register = () => {
-
+    const navigate = useNavigate()
     const { createUser } = useContext(AuthContext)
 
     const handleRegister = event => {
@@ -15,13 +16,24 @@ const Register = () => {
         const email = form.email.value
         const password = form.password.value
         const photo = form.password.value
+        if (password.length < 6) {
+            return toast.error("Password must be at least 6 characters")
+        }
 
+        else if (!/[A-Z]/.test(password)) {
+            return toast.error("Password must have at least one uppercase letter")
+        }
+
+        else if (!/[!@#$%^&*()_+{}[\]:;<>,.?~\-|/"'`]/.test(password)) {
+            return toast.error("Password must contain at least one special character")
+        }
         const newUser = { displayName, email, password, photo }
         console.log(newUser);
         // create user 
         createUser(email, password)
             .then(result => {
                 console.log(result);
+                navigate(location?.state ? location.state : '/')
             })
             .catch(error => {
                 console.log(error);

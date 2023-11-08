@@ -31,8 +31,16 @@ const Login = () => {
                 toast.success('Successfully Logged In!');
                 navigate(location?.state ? location.state : '/')
             })
-            .catch(error => {
-                console.log(error);
+            .catch(err => {
+                if (err.message === 'IncorrectEmail') {
+                    toast.error('Email does not match')
+
+                } else if (err.message === 'IncorrectPassword') {
+                    toast.error('Password does not match')
+
+                } else {
+                    toast.error('Email and Password does not match')
+                }
             })
 
     }

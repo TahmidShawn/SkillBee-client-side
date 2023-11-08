@@ -15,7 +15,7 @@ const Category = () => {
 
 
     return (
-        <div className="max-w-5xl mx-auto mt-10">
+        <div className="max-w-7xl mx-auto border-2 px-20 pb-20 pt-10 mt-10">
             <Tabs className="mt-5">
                 <TabList className="text-center mb-10">
                     <Tab>Web Design</Tab>
