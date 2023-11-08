@@ -1,8 +1,10 @@
-# React + Vite
+* Website Name: Skill bee
+* Website URL: 
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Website Features:
 
-Currently, two official plugins are available:
-
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+* Your data will be stored in mongoDB database.
+* Only Buyer can update or delete job post 
+* We have implement private routes so that only registered account can watch the private information.
+* You can signUp in multiple ways(email password,google) in the website.
+* The job status will my handle dynamically so all will be up to date.

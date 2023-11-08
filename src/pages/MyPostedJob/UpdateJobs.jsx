@@ -29,7 +29,7 @@ const UpdateJobs = () => {
 
 
 
-        // send data to the server
+        // send data to the server .
         fetch(`http://localhost:5000/jobs/${_id}`, {
             method: 'PUT',
             headers: {
