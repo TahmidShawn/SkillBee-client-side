@@ -1,5 +1,6 @@
 import bg2 from './../../assets/bg2.png';
 
+
 const Banner = () => {
     return (
         <div className="h-[600px] bg-contain bg-center bg-no-repeat relative" style={{ backgroundImage: `url(${bg2})` }}>
