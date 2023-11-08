@@ -33,8 +33,8 @@ const MyBids = () => {
                     const updated = myBids.find(booking => booking._id === id);
                     updated.status = 'completed'
                     updated.showStatus = 'accepted'
-                    const newBookings = [updated, ...remaining];
-                    setMyBids(newBookings);
+                    const newMyBids = [updated, ...remaining];
+                    setMyBids(newMyBids);
                 }
             })
     }

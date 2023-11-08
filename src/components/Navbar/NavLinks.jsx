@@ -7,7 +7,7 @@ const NavLinks = () => {
                 <NavLink
                     to="/"
                     className={({ isActive, isPending }) =>
-                        isPending ? "pending" : isActive ? " " : ""
+                        isPending ? "pending" : isActive ? "active" : ""
                     }
                 >
                     Home
@@ -17,7 +17,7 @@ const NavLinks = () => {
                 <NavLink
                     to="/addJob"
                     className={({ isActive, isPending }) =>
-                        isPending ? "pending" : isActive ? "" : ""
+                        isPending ? "pending" : isActive ? "active" : ""
                     }
                 >
                     Add Job
@@ -27,7 +27,7 @@ const NavLinks = () => {
                 <NavLink
                     to="/myPostedJobs"
                     className={({ isActive, isPending }) =>
-                        isPending ? "pending" : isActive ? "" : ""
+                        isPending ? "pending" : isActive ? "active" : ""
                     }
                 >
                     My Posted Jobs
@@ -37,7 +37,7 @@ const NavLinks = () => {
                 <NavLink
                     to="/myBids"
                     className={({ isActive, isPending }) =>
-                        isPending ? "pending" : isActive ? "" : ""
+                        isPending ? "pending" : isActive ? "active" : ""
                     }
                 >
                     My Bids
@@ -47,7 +47,7 @@ const NavLinks = () => {
                 <NavLink
                     to="/bidRequests"
                     className={({ isActive, isPending }) =>
-                        isPending ? "pending" : isActive ? "" : ""
+                        isPending ? "pending" : isActive ? "active" : ""
                     }
                 >
                     Bid Requests
@@ -57,7 +57,7 @@ const NavLinks = () => {
                 <NavLink
                     to="/login"
                     className={({ isActive, isPending }) =>
-                        isPending ? "pending" : isActive ? "" : ""
+                        isPending ? "pending" : isActive ? "active" : ""
                     }
                 >
                     Login

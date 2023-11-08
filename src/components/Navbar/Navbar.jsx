@@ -9,7 +9,7 @@ import toast from 'react-hot-toast';
 const Navbar = () => {
 
     const { user, logOut } = useContext(AuthContext)
-    // console.log(user);
+    console.log(user);
     const handleLogOut = () => {
         logOut()
             .then(result => {
@@ -54,17 +54,24 @@ const Navbar = () => {
                 <div className="dropdown dropdown-end gap-5">
                     <label tabIndex={0} className="btn btn-ghost btn-circle avatar bg-gray-200">
                         <div className="rounded-full">
-                            <p className="text-4xl text-center"><FaUser /></p>
+                            {
+                                user?.photoURL ? <img src={user.photoURL} alt="" /> :
+                                    <p className="text-4xl text-center"><FaUser /></p>
+                                // <img src={user.photo} alt="" />
+                            }
+
                         </div>
                     </label>
                     <ul tabIndex={0} className="mt-3 z-[1] p-2 shadow menu menu-sm dropdown-content bg-base-100 rounded-box w-52">
                         <li>
                             <a className="justify-between">
-                                Profile
-                                <span className="badge">New</span>
+                                {
+                                    user?.email ? <p>{user.displayName || 'user'}</p> :
+                                       <p>New</p>
+                                }
+
                             </a>
                         </li>
-                        <li><a>Settings</a></li>
                         <li>
                             {
                                 user ?

@@ -10,12 +10,12 @@ const Register = () => {
         event.preventDefault()
         const form = event.target
         // get register info 
-        const name = form.name.value
+        const displayName = form.name.value
         const email = form.email.value
         const password = form.password.value
         const photo = form.password.value
 
-        const newUser = { name, email, password, photo }
+        const newUser = { displayName, email, password, photo }
         console.log(newUser);
         // create user 
         createUser(email, password)
@@ -36,7 +36,7 @@ const Register = () => {
                         <label className="label">
                             <span className="label-text">Name</span>
                         </label>
-                        <input type="text" name="name" placeholder="name" className="input input-bordered" required />
+                        <input type="text" name="displayName" placeholder="name" className="input input-bordered" required />
                     </div>
                     <div className="form-control">
                         <label className="label">

@@ -20,9 +20,7 @@ const BidReq = ({ bidReq, handleAccept, handleReject }) => {
             <td>{email}</td>
             <td>{user_deadLine}</td>
             <td>{price}</td>
-            {/* <th>
-                <button className="btn btn-ghost btn-xs">Accept</button>
-            </th> */}
+
             <th>
                 {
                     status === 'confirm' ? <p>In Progress</p> : <p>Pending</p> &&
@@ -30,22 +28,10 @@ const BidReq = ({ bidReq, handleAccept, handleReject }) => {
 
                 }
             </th>
-            {/* <th>
-                {
-                    status === 'confirm' ? <progress className="progress progress-error w-56" value="40" max="100"></progress> :
-                        <button onClick={() => handleAccept(_id)} className="btn btn-ghost btn-xs">Accept</button>
-                }
-            </th>
 
             <th>
                 {
-                    status === 'reject' ? <progress className="progress progress-error w-56" value="40" max="100"></progress> :
-                        <button onClick={() => handleReject(_id)} className="btn btn-ghost btn-xs">reject</button>
-                }
-            </th> */}
-            <th>
-                {
-                    showStatus === 'InProgress' ? <progress className="progress progress-error w-56" value="40" max="100"></progress> :
+                    showStatus === 'accepted' ? <progress className="progress progress-error w-56" value="40" max="100"></progress> :
                         <div>
                             <button onClick={() => handleAccept(_id)} className="btn btn-ghost btn-xs">Accept</button>
                             <button onClick={() => handleReject(_id)} className="btn btn-ghost btn-xs">reject</button>

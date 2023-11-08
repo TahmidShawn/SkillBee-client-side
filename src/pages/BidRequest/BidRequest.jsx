@@ -31,8 +31,8 @@ const BidRequest = () => {
                     const updated = bidRequest.find(booking => booking._id === id);
                     updated.status = 'confirm'
                     updated.showStatus = 'accepted'
-                    const newBookings = [updated, ...remaining];
-                    setBidRequest(newBookings);
+                    const newBidRequest = [updated, ...remaining];
+                    setBidRequest(newBidRequest);
                 }
             })
     }
@@ -53,8 +53,8 @@ const BidRequest = () => {
                     const updated = bidRequest.find(booking => booking._id === id);
                     updated.status = 'reject'
                     updated.showStatus = 'accepted'
-                    const newBookings = [updated, ...remaining];
-                    setBidRequest(newBookings);
+                    const newBidRequest = [updated, ...remaining];
+                    setBidRequest(newBidRequest);
                 }
             })
     }
