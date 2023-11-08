@@ -1,7 +1,7 @@
 
-const MyBid = ({ myBid }) => {
+const MyBid = ({ myBid, handleComplete }) => {
     console.log(myBid);
-    const { price, user_deadLine, email, buyer_email, jobId, jobTitle } = myBid
+    const { price, user_deadLine, email, buyer_email, jobId, jobTitle, _id, status } = myBid
 
     return (
 
@@ -16,10 +16,20 @@ const MyBid = ({ myBid }) => {
             <td>{email}</td>
             <td>{user_deadLine}</td>
             <th>
-                <button className="btn btn-ghost btn-xs">Pending</button>
+                {
+                    status === 'completed' ? <p>completed</p> : <p>Pending</p> &&
+                        status === 'confirm' ? <p>In Progress</p> : <p>Pending</p> &&
+                            status === 'reject' ? <p>Canceled</p> : <p>Pending</p>
+
+                }
             </th>
+
             <th>
-                <button className="btn btn-ghost btn-xs">Complete</button>
+                {
+                    status === 'confirm' ? <button onClick={() => handleComplete(_id)} className="btn btn-ghost btn-xs">Complete</button> :
+                        ''
+                }
+
             </th>
         </tr>
 

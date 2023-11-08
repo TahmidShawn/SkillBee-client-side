@@ -101,8 +101,6 @@ const UpdateJobs = () => {
                             value="Update"
                         />
                     </div>
-
-
                 </form>
             </div>
         </div>
