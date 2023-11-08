@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 const Job = ({ job }) => {
     const { _id, deadline, title, description, minPrice, maxPrice } = job
     return (
-        <div className="card bg-[#F8F9FB] shadow-xl mt-10 border-2">
+        <div className="card bg-[#F8F9FB] border-2">
             <div className="card-body">
                 <h2 className="card-title text-4xl font-bold mb-5">{title}</h2>
                 <p>{description}</p>
