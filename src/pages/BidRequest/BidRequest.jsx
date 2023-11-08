@@ -1,11 +1,10 @@
-import { useContext, useEffect, useState, } from "react";
-import { AuthContext } from "../../provider/AuthProvider";
+import {  useEffect, useState, } from "react";
 import BidReq from "./BidReq";
 import { Helmet } from "react-helmet";
 
 const BidRequest = () => {
     const [bidRequest, setBidRequest] = useState([])
-    const { user } = useContext(AuthContext)
+
 
     const url = 'http://localhost:5000/myBids'
     useEffect(() => {
