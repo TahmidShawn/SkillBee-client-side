@@ -1,6 +1,7 @@
 import { useContext } from "react";
 import { Link } from "react-router-dom";
 import { AuthContext } from "../../provider/AuthProvider";
+import { Helmet } from "react-helmet";
 
 const Register = () => {
 
@@ -29,6 +30,10 @@ const Register = () => {
 
     return (
         <div className="bg-[#F5F7FA] py-5">
+            <Helmet>
+                <title>Skill Bee | Register</title>
+                <meta name="description" content="Helmet application" />
+            </Helmet>
             <h2 className='text-4xl font-bold text-center'>Register</h2>
             <div className="card flex-shrink-0 w-full mx-auto max-w-2xl shadow-2xl bg-base-100 mt-10">
                 <form onSubmit={handleRegister} className="card-body">

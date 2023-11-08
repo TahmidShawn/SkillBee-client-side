@@ -2,6 +2,7 @@
 import MyBid from "./MyBid";
 import { useContext, useEffect, useState } from "react";
 import { AuthContext } from "../../provider/AuthProvider";
+import { Helmet } from "react-helmet";
 
 
 const MyBids = () => {
@@ -41,7 +42,10 @@ const MyBids = () => {
 
     return (
         <div>
-
+            <Helmet>
+                <title>Skill Bee | My Bids</title>
+                <meta name="description" content="Helmet application" />
+            </Helmet>
             <div className="overflow-x-auto">
                 <table className="table">
                     {/* head */}

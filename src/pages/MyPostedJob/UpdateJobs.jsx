@@ -2,6 +2,7 @@ import { useContext } from "react";
 import { useLoaderData, useNavigate } from "react-router-dom";
 import Swal from "sweetalert2";
 import { AuthContext } from "../../provider/AuthProvider";
+import { Helmet } from "react-helmet";
 
 const UpdateJobs = () => {
 
@@ -54,8 +55,12 @@ const UpdateJobs = () => {
     }
     return (
         <div>
+            
             <div className="max-w-5xl mx-auto shadow-md p-10 border-[6px] mt-10">
-
+            <Helmet>
+                <title>Skill Bee | Update</title>
+                <meta name="description" content="Helmet application" />
+            </Helmet>
                 <form onSubmit={handleAddJob}>
                     <div className="relative z-0 w-full mb-6 group">
                         <input type="email" readOnly name="buyerEmail" id="email" className="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer" defaultValue={user?.email} placeholder=" " required />

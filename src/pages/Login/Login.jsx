@@ -3,6 +3,7 @@ import { FcGoogle } from 'react-icons/fc';
 import { useContext } from "react";
 import { AuthContext } from "../../provider/AuthProvider";
 import toast from "react-hot-toast";
+import { Helmet } from "react-helmet";
 
 
 const Login = () => {
@@ -48,6 +49,10 @@ const Login = () => {
 
     return (
         <div className="bg-[#F5F7FA] py-8">
+            <Helmet>
+                <title>Skill Bee | Login</title>
+                <meta name="description" content="Helmet application" />
+            </Helmet>
             <h2 className='text-4xl font-bold text-center'>Login</h2>
             <div className="card flex-shrink-0 w-full mx-auto max-w-2xl shadow-2xl bg-base-100 mt-10">
                 <form onSubmit={handleLogIn} className="card-body">

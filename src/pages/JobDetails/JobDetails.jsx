@@ -2,6 +2,7 @@ import { useContext } from "react";
 import { useLoaderData, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../provider/AuthProvider";
 import Swal from "sweetalert2";
+import { Helmet } from "react-helmet";
 
 const JobDetails = () => {
     const navigate = useNavigate();
@@ -50,6 +51,10 @@ const JobDetails = () => {
 
     return (
         <div>
+            <Helmet>
+                <title>Skill Bee | Job Details</title>
+                <meta name="description" content="Helmet application" />
+            </Helmet>
             <div className=" bg-[#F8F9FB] mt-10 border-2 rounded-none flex justify-around items-center pb-10">
                 <div className="w-1/2 text-center space-y-10">
                     <h2 name="title" className="text-6xl font-bold mb-5">{title}</h2>

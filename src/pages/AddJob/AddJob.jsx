@@ -2,6 +2,7 @@ import Swal from "sweetalert2";
 import { useNavigate } from 'react-router-dom';
 import { useContext } from "react";
 import { AuthContext } from "../../provider/AuthProvider";
+import { Helmet } from "react-helmet";
 
 const AddJob = () => {
     const navigate = useNavigate();
@@ -56,6 +57,10 @@ const AddJob = () => {
 
     return (
         <div className="mt-10">
+               <Helmet>
+                <title>Skill Bee | Add Jobs</title>
+                <meta name="description" content="Helmet application" />
+            </Helmet>
             <h1 className="text-center text-4xl font-bold">Add Your Job</h1>
             <div className="max-w-5xl mx-auto shadow-md p-10 border-[6px] mt-10">
 

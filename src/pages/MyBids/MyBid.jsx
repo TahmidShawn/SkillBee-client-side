@@ -37,3 +37,6 @@ const MyBid = ({ myBid, handleComplete }) => {
 };
 
 export default MyBid;
+
+
+

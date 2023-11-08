@@ -8,8 +8,8 @@ const Banner = () => {
                 <h1 className="text-5xl font-bold">Empower Your Journey <br /> with Skill Bee</h1>
                 <p className="text-2xl mt-10">Connect with the best talent, grow your skills, and realize your dreams through Skill Bee.</p>
                 <div className="flex gap-2 items-center justify-center mt-7">
-                    <a href="/find-talent" className="btn btn-outline rounded-none bg-gray-800 text-white">Find Talent</a>
-                    <a href="/find-work" className="btn btn-outline rounded-none bg-gray-800 text-white">Find Work</a>
+                    <button className="btn btn-outline rounded-none bg-gray-800 text-white">Find Talent</button>
+                    <button className="btn btn-outline rounded-none bg-gray-800 text-white">Find Work</button>
                 </div>
             </div>
         </div>

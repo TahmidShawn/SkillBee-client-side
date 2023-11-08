@@ -16,7 +16,7 @@ const MyJob = ({ myJob, handleDelete }) => {
 
     if (buyerEmail === user?.email) {
         return (
-            <div className="card bg-[#F8F9FB] shadow-xl mt-10 border-2 text-center" >
+            <div className="card bg-[#F8F9FB] border-2 text-center" >
                 <div className="card-body">
                     <h2 className="text-3xl font-bold mb-5">Job Title : {title}</h2>
                     <h2>Email : {buyerEmail}</h2>

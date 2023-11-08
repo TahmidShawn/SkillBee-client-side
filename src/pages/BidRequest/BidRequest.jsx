@@ -1,6 +1,7 @@
 import { useContext, useEffect, useState, } from "react";
 import { AuthContext } from "../../provider/AuthProvider";
 import BidReq from "./BidReq";
+import { Helmet } from "react-helmet";
 
 const BidRequest = () => {
     const [bidRequest, setBidRequest] = useState([])
@@ -61,7 +62,10 @@ const BidRequest = () => {
 
     return (
         <div>
-
+            <Helmet>
+                <title>Skill Bee | Bid Request</title>
+                <meta name="description" content="Helmet application" />
+            </Helmet>
             <div className="overflow-x-auto">
                 <table className="table">
                     {/* head */}

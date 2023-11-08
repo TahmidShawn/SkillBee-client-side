@@ -3,6 +3,7 @@ import { useEffect, useState } from "react";
 import MyJob from "./MyJob";
 import { useLoaderData } from "react-router-dom";
 import Swal from "sweetalert2";
+import { Helmet } from "react-helmet";
 
 const MyPostedJob = () => {
     const addJob = useLoaderData()
@@ -46,8 +47,12 @@ const MyPostedJob = () => {
     }
 
     return (
-        <div className="grid grid-cols-1 md:grid-cols-2 max-w-5xl mx-auto">
-
+        <div className="grid grid-cols-1 md:grid-cols-2 max-w-5xl gap-10 mx-auto mt-20">
+            <Helmet>
+                <title>Skill Bee | My Posted Job</title>
+                <meta name="description" content="Helmet application" />
+            </Helmet>
+            
             {
                 addJobs?.map(addJob => <MyJob myJob={addJob} handleDelete={handleDelete} key={addJob._id}></MyJob>)
             }
