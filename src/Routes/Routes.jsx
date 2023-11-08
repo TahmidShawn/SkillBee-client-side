@@ -22,7 +22,7 @@ const Routes = createBrowserRouter([
             {
                 path: '/',
                 element: <Home></Home>,
-                loader: () => fetch('http://localhost:5000/jobs')
+                loader: () => fetch('https://assignment-11-server-seven-phi.vercel.app/jobs')
             },
             {
                 path: '/addJob',
@@ -31,12 +31,12 @@ const Routes = createBrowserRouter([
             {
                 path: '/jobs/:id',
                 element: <PrivateRoutes><JobDetails></JobDetails></PrivateRoutes>,
-                loader: ({ params }) => fetch(`http://localhost:5000/jobs/${params.id}`)
+                loader: ({ params }) => fetch(`https://assignment-11-server-seven-phi.vercel.app/jobs/${params.id}`)
             },
             {
                 path: '/myPostedJobs',
                 element: <PrivateRoutes><MyPostedJob></MyPostedJob></PrivateRoutes>,
-                loader: () => fetch('http://localhost:5000/jobs')
+                loader: () => fetch('https://assignment-11-server-seven-phi.vercel.app/jobs')
             },
             {
                 path: '/login',
@@ -54,7 +54,7 @@ const Routes = createBrowserRouter([
             {
                 path: '/updateJobs/:id',
                 element: <UpdateJobs></UpdateJobs>,
-                loader: ({ params }) => fetch(`http://localhost:5000/jobs/${params.id}`)
+                loader: ({ params }) => fetch(`https://assignment-11-server-seven-phi.vercel.app/jobs/${params.id}`)
             },
             {
                 path: '/bidRequests',

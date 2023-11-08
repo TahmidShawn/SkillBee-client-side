@@ -30,7 +30,7 @@ const UpdateJobs = () => {
 
 
         // send data to the server .
-        fetch(`http://localhost:5000/jobs/${_id}`, {
+        fetch(`https://assignment-11-server-seven-phi.vercel.app/jobs/${_id}`, {
             method: 'PUT',
             headers: {
                 'content-type': 'application/json'

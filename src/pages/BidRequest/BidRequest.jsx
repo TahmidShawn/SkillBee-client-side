@@ -6,7 +6,7 @@ const BidRequest = () => {
     const [bidRequest, setBidRequest] = useState([])
 
 
-    const url = 'http://localhost:5000/myBids'
+    const url = 'https://assignment-11-server-seven-phi.vercel.app/myBids'
     useEffect(() => {
         fetch(url)
             .then(res => res.json())
@@ -15,7 +15,7 @@ const BidRequest = () => {
     }, [url]);
 
     const handleAccept = id => {
-        fetch(`http://localhost:5000/myBids/${id}`, {
+        fetch(`https://assignment-11-server-seven-phi.vercel.app/myBids/${id}`, {
             method: 'PATCH',
             headers: {
                 'content-type': 'application/json'
@@ -37,7 +37,7 @@ const BidRequest = () => {
             })
     }
     const handleReject = id => {
-        fetch(`http://localhost:5000/myBids/${id}`, {
+        fetch(`https://assignment-11-server-seven-phi.vercel.app/myBids/${id}`, {
             method: 'PATCH',
             headers: {
                 'content-type': 'application/json'

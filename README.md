@@ -8,3 +8,5 @@ Website Features:
 * We have implement private routes so that only registered account can watch the private information.
 * You can signUp in multiple ways(email password,google) in the website.
 * The job status will my handle dynamically so all will be up to date.
+
+

@@ -24,7 +24,7 @@ const JobDetails = () => {
         }
         console.log(myBids);
 
-        fetch('http://localhost:5000/myBids', {
+        fetch('https://assignment-11-server-seven-phi.vercel.app/myBids', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'

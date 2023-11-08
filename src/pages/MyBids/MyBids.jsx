@@ -9,7 +9,7 @@ const MyBids = () => {
     const [myBids, setMyBids] = useState([])
     const { user } = useContext(AuthContext)
 
-    const url = `http://localhost:5000/myBids?email=${user?.email}`
+    const url = `https://assignment-11-server-seven-phi.vercel.app/myBids?email=${user?.email}`
     useEffect(() => {
         fetch(url)
             .then(res => res.json())
@@ -18,7 +18,7 @@ const MyBids = () => {
     }, [url]);
 
     const handleComplete = id => {
-        fetch(`http://localhost:5000/myBids/${id}`, {
+        fetch(`https://assignment-11-server-seven-phi.vercel.app/myBids/${id}`, {
             method: 'PATCH',
             headers: {
                 'content-type': 'application/json'

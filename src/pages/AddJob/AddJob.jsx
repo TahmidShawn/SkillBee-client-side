@@ -30,7 +30,7 @@ const AddJob = () => {
 
         // send newJob data to server 
 
-        fetch('http://localhost:5000/jobs', {
+        fetch('https://assignment-11-server-seven-phi.vercel.app/jobs', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'
