@@ -8,7 +8,8 @@ import { Helmet } from "react-helmet";
 const MyBids = () => {
     const [myBids, setMyBids] = useState([])
     const { user } = useContext(AuthContext)
-
+    const [asc, setAsc] = useState(true);
+    
     const url = `https://assignment-11-server-seven-phi.vercel.app/myBids?email=${user?.email}`
     useEffect(() => {
         fetch(url)
@@ -16,6 +17,12 @@ const MyBids = () => {
             .then(data => setMyBids(data))
 
     }, [url]);
+
+    useEffect(() => {
+        fetch(`https://assignment-11-server-seven-phi.vercel.app/myBids?email=${user?.email}&sort=${asc ? 'asc' : 'des'}`)
+            .then(res => res.json())
+            .then(data => setMyBids(data));
+    }, [asc, user?.email])
 
     const handleComplete = id => {
         fetch(`https://assignment-11-server-seven-phi.vercel.app/myBids/${id}`, {
@@ -40,6 +47,8 @@ const MyBids = () => {
             })
     }
 
+
+
     return (
         <div>
             <Helmet>
@@ -47,6 +56,9 @@ const MyBids = () => {
                 <meta name="description" content="Helmet application" />
             </Helmet>
             <div className="overflow-x-auto">
+
+
+
                 <table className="table">
                     {/* head */}
                     <thead>
@@ -64,6 +76,12 @@ const MyBids = () => {
                         }
                     </tbody>
                 </table>
+                <button
+                    className="btn btn-outline w-40 mx-auto block mt-5"
+                    onClick={() => setAsc(!asc)}
+                >
+                    sort
+                </button>
             </div>
         </div>
 

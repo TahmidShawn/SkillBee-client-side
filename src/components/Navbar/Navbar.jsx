@@ -67,7 +67,7 @@ const Navbar = () => {
                             <a className="justify-between">
                                 {
                                     user?.email ? <p>{user.displayName || 'user'}</p> :
-                                       <p>New</p>
+                                        <p>New</p>
                                 }
 
                             </a>

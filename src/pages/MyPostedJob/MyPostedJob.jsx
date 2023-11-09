@@ -52,7 +52,7 @@ const MyPostedJob = () => {
                 <title>Skill Bee | My Posted Job</title>
                 <meta name="description" content="Helmet application" />
             </Helmet>
-            
+
             {
                 addJobs?.map(addJob => <MyJob myJob={addJob} handleDelete={handleDelete} key={addJob._id}></MyJob>)
             }

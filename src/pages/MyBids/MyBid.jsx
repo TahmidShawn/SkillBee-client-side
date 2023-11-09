@@ -15,6 +15,7 @@ const MyBid = ({ myBid, handleComplete }) => {
             </td>
             <td>{buyer_email}</td>
             <td>{user_deadLine}</td>
+            <td>{price}</td>
             <th>
                 {
                     status === 'completed' ? <p>completed</p> : <p>Pending</p> &&
